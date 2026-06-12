@@ -1,0 +1,302 @@
+/* Claude 官网风格主题 */
+
+/* 亮色主题 - Claude 风格 */
+.light body,
+:root:not(.dark) body {
+  background: #faf9f7;
+  color: #1a1a1a;
+}
+
+:root {
+  /* Claude 温暖色调 */
+  --claude-orange: #D97706;
+  --claude-orange-light: #F59E0B;
+  --claude-orange-dark: #B45309;
+  --claude-bg: #faf9f7;
+  --claude-bg-secondary: #f5f4f0;
+  --claude-bg-tertiary: #eceae4;
+  --claude-border: #e5e2da;
+  --claude-text: #1a1a1a;
+  --claude-text-secondary: #6b6b6b;
+  --claude-text-muted: #9ca3af;
+
+  /* 暗色模式变量 */
+  --claude-dark-bg: #1a1a1a;
+  --claude-dark-bg-secondary: #2d2d2d;
+  --claude-dark-bg-tertiary: #3d3d3d;
+  --claude-dark-border: #404040;
+  --claude-dark-text: #e5e5e5;
+  --claude-dark-text-secondary: #a0a0a0;
+}
+
+/* ========== 亮色主题 ========== */
+
+.light .glass,
+:root:not(.dark) .glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: var(--claude-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.light .glass-liquid,
+:root:not(.dark) .glass-liquid {
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--claude-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.light .message-teacher,
+:root:not(.dark) .message-teacher {
+  background: #fff8f0;
+  border-color: #fde68a;
+}
+
+.light .message-student,
+:root:not(.dark) .message-student {
+  background: var(--claude-bg-secondary);
+  border-color: var(--claude-border);
+}
+
+.light .btn-primary,
+:root:not(.dark) .btn-primary {
+  background: var(--claude-orange);
+  color: white;
+  border: none;
+}
+
+.light .btn-primary:hover,
+:root:not(.dark) .btn-primary:hover {
+  background: var(--claude-orange-dark);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.light .btn-ghost,
+:root:not(.dark) .btn-ghost {
+  background: transparent;
+  border: 1px solid var(--claude-border);
+  color: var(--claude-text-secondary);
+}
+
+.light .btn-ghost:hover,
+:root:not(.dark) .btn-ghost:hover {
+  background: var(--claude-bg-secondary);
+  border-color: #ccc;
+  color: var(--claude-text);
+}
+
+.light .input-glass,
+:root:not(.dark) .input-glass {
+  background: #ffffff;
+  border: 1px solid var(--claude-border);
+}
+
+.light .input-glass:focus,
+:root:not(.dark) .input-glass:focus {
+  border-color: var(--claude-orange);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.light .glow-border::before,
+:root:not(.dark) .glow-border::before {
+  background: linear-gradient(135deg, var(--claude-orange), transparent, var(--claude-orange-light));
+}
+
+.light .glow-border,
+:root:not(.dark) .glow-border {
+  border-color: var(--claude-orange) !important;
+  background: rgba(217, 119, 6, 0.05);
+}
+
+/* ========== 暗色主题 - Claude 风格 ========== */
+
+.dark body {
+  background: var(--claude-dark-bg);
+  color: var(--claude-dark-text);
+}
+
+.dark .glass {
+  background: rgba(45, 45, 45, 0.95);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: var(--claude-dark-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark .glass-liquid {
+  background: var(--claude-dark-bg-secondary);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--claude-dark-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .message-teacher {
+  background: rgba(217, 119, 6, 0.1);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+.dark .message-student {
+  background: var(--claude-dark-bg-tertiary);
+  border-color: var(--claude-dark-border);
+}
+
+.dark .btn-primary {
+  background: var(--claude-orange);
+  color: white;
+  border: none;
+}
+
+.dark .btn-primary:hover {
+  background: var(--claude-orange-light);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+.dark .btn-ghost {
+  background: transparent;
+  border: 1px solid var(--claude-dark-border);
+  color: var(--claude-dark-text-secondary);
+}
+
+.dark .btn-ghost:hover {
+  background: var(--claude-dark-bg-tertiary);
+  border-color: #555;
+  color: var(--claude-dark-text);
+}
+
+.dark .input-glass {
+  background: var(--claude-dark-bg-tertiary);
+  border: 1px solid var(--claude-dark-border);
+}
+
+.dark .input-glass:focus {
+  border-color: var(--claude-orange);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+.dark .glow-border::before {
+  background: linear-gradient(135deg, var(--claude-orange), transparent, var(--claude-orange-light));
+}
+
+.dark .glow-border {
+  border-color: var(--claude-orange) !important;
+  background: rgba(217, 119, 6, 0.1);
+}
+
+/* ========== 全局样式覆盖 ========== */
+
+body {
+  font-family: 'Söhne', 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* 滚动条 - Claude 风格 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 进度条 */
+.progress-bar {
+  background: var(--claude-bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dark .progress-bar {
+  background: var(--claude-dark-bg-tertiary);
+}
+
+.progress-fill {
+  background: var(--claude-orange);
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
+/* 移除动画效果 - Claude 风格更简洁 */
+.animate-pulse-glow {
+  animation: none;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(217, 119, 6, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.5);
+  }
+}
+
+/* 按钮动画简化 */
+.btn-primary,
+.btn-ghost {
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Claude 风格的选中状态 */
+.dark button[class*="bg-primary/10"],
+.dark button[class*="bg-primary/5"] {
+  background: rgba(217, 119, 6, 0.1) !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+}
+
+.light button[class*="bg-primary/10"],
+.light button[class*="bg-primary/5"],
+button[class*="bg-primary/10"],
+button[class*="bg-primary/5"] {
+  background: rgba(217, 119, 6, 0.08) !important;
+  border-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+/* Claude 风格的图标颜色 */
+.text-primary {
+  color: var(--claude-orange) !important;
+}
+
+.bg-primary {
+  background: var(--claude-orange) !important;
+}
+
+.from-primary {
+  --tw-gradient-from: var(--claude-orange) !important;
+}
+
+.to-primary-dim {
+  --tw-gradient-to: var(--claude-orange-dark) !important;
+}
+
+/* 输入框占位符颜色 */
+::placeholder {
+  color: #9ca3af;
+}
+
+.dark ::placeholder {
+  color: #6b6b6b;
+}
