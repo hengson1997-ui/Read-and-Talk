@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { config } from './config.js';
 import { getDb, closeDb } from './db/index.js';
 import { booksRouter } from './routes/books.js';
@@ -11,6 +13,9 @@ import { notesRouter } from './routes/notes.js';
 import { ttsRouter } from './routes/tts.js';
 import { asrRouter } from './routes/asr.js';
 import { settingsRouter } from './routes/settings.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
@@ -37,6 +42,17 @@ app.use('/api/settings', settingsRouter);
 app.get('/api/health', async (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// 生产环境：提供前端静态文件
+if (process.env.NODE_ENV === 'production') {
+  const clientDistPath = join(__dirname, '../../client/dist');
+  app.use(express.static(clientDistPath));
+
+  // 所有非 API 路由返回前端 index.html
+  app.get('*', (req, res) => {
+    res.sendFile(join(clientDistPath, 'index.html'));
+  });
+}
 
 // 启动服务器
 const PORT = config.port;
