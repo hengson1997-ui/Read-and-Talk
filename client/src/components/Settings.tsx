@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Settings as SettingsIcon, Check, Loader2, Eye, EyeOff, Zap, Key, Globe, Cpu } from 'lucide-react';
+import { X, Settings as SettingsIcon, Check, Loader2, Eye, EyeOff, Zap, Globe, Cpu } from 'lucide-react';
 
 interface SettingsProps {
   isOpen: boolean;
